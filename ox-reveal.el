@@ -1277,10 +1277,14 @@ publishing directory.
 Return output file name."
   (org-publish-org-to 'reveal filename ".html" plist pub-dir))
 
-;; Register auto-completion for speaker notes.
-(when org-reveal-note-key-char
-  (add-to-list 'org-structure-template-alist
-               (list org-reveal-note-key-char "#+BEGIN_NOTES\n\?\n#+END_NOTES")))
+
+;; TODO: fix with the Org 9.2 mechanism
+;; https://orgmode.org/Changes.html#org1b5e967
+;;
+;; ;; Register auto-completion for speaker notes.
+;; (when org-reveal-note-key-char
+;;   (add-to-list 'org-structure-template-alist
+;;                (list org-reveal-note-key-char "#+BEGIN_NOTES\n\?\n#+END_NOTES")))
 
 (provide 'ox-reveal)
 
